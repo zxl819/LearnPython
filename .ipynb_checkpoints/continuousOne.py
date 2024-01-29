@@ -6,9 +6,8 @@ class Solution:
         for j in range(len(nums)):
             if nums[j] == 1:
                 i += 1
-                max_length = max(max_length, i)
+                max_length = max(max_length, i) # 不能放另一个分支，否则会少输一个
             else:
-                
                 i = 0
         return max_length
 
