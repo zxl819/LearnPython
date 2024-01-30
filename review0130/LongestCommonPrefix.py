@@ -11,6 +11,8 @@ class Solution:
         for i in range(min(map(len,strs))):
             if first_str[i] == last_str[i]:
                 common_prefix.append(first_str[i])
+            else:
+                break
             
         return "".join(common_prefix)        
     
