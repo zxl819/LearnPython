@@ -1,2 +1,2 @@
-## new exercise
-此分支用于学习新题目
+## Random practice
+此分支用于随机尝试已经练过的东西
