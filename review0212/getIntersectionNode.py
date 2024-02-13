@@ -2,6 +2,8 @@ class ListNode:
     def __init__(self, next=None, val=0):
         self.next = next
         self.val = val
+
+ 
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode):
         lenA, lenB = 0, 0
