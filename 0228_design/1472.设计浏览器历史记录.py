@@ -13,18 +13,21 @@ class BrowserHistory:
 
 
     def visit(self, url: str) -> None:
-        del self.stack[self.idx + 1:]
+        del self.stack[self.idx + 1 :]
         self.stack.append(url)
         self.idx += 1
 
+
     def back(self, steps: int) -> str:
-        self.idx = max(0, self.idx - steps)
+        self.idx = max(self.idx - steps, 0)
         return self.stack[self.idx]
+
 
 
     def forward(self, steps: int) -> str:
-        self.idx = min(len(self.stack) - 1, self.idx + steps)
+        self.idx = min(self.idx + steps, len(self.stack) - 1)
         return self.stack[self.idx]
+
 
 
 
