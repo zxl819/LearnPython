@@ -22,12 +22,38 @@ class Solution:
         #         fast += 1
         #         idx = 0
 
-        slow = 0
-        for i in nums:
-            if slow < 2 or nums[slow - 2] != i:
-                nums[slow] = i
+        # slow = 0
+        # for i in nums:
+        #     if slow < 2 or nums[slow - 2] != i:
+        #         nums[slow] = i
+        #         slow += 1
+        # return slow
+        # if len(nums) <= 1:
+        #     return len(nums)
+        # slow, fast, cnt = 1, 1, 1
+        # while fast < len(nums):
+        #     if nums[fast - 1] == nums[fast]:
+        #         cnt += 1 
+        #         if cnt <= 2:
+        #             nums[slow] = nums[fast]
+        #             slow += 1
+        #     else:
+        #         nums[slow] = nums[fast]
+        #         slow += 1
+        #         cnt = 1
+        #     fast += 1
+        # return slow
+
+        if len(nums) < 2:
+            return len(nums)
+        slow, fast = 2, 2
+        while fast < len(nums):
+            if nums[fast] != nums[slow - 2]:
+                nums[slow] = nums[fast]
                 slow += 1
+            fast += 1
         return slow
+
 
 nums = [0,0,1,1,1,1,2,3,3]
 Solution().removeDuplicates(nums)
